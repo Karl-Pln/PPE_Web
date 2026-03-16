@@ -27,6 +27,28 @@ class QuestionDAO {
         return [];
     }
 
+    public function getById(int $id): ?Question {
+    try {
+        $pdo  = DBConnexion::getConnexion();
+        $stmt = $pdo->prepare("SELECT * FROM question WHERE id = :id");
+        $stmt->execute([':id' => $id]);
+        $row  = $stmt->fetch();
+        if ($row) {
+            $q                  = new Question();
+            $q->id              = $row['id'];
+            $q->questionnaireId = $row['questionnaire_id'];
+            $q->libelle         = $row['libelle'];
+            $q->typeReponse     = $row['type_reponse'];
+            $q->bonneReponse    = $row['bonne_reponse'];
+            $q->ordre           = $row['ordre'];
+            return $q;
+        }
+    } catch (Exception $e) {
+        error_log("DAO getById question : " . $e->getMessage());
+    }
+    return null;
+}
+
     public function ajouter(Question $q): int {
         try {
             $pdo  = DBConnexion::getConnexion();

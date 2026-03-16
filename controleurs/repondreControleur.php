@@ -39,7 +39,7 @@ class RepondreControleur {
         }
 
         $utilisateur = $_SESSION['utilisateur'];
-        include "vues/questionnaire_detail.php";
+        include "vues/detailQuestionnaire.php";
     }
 
     public function soumettre() {

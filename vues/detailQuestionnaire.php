@@ -21,7 +21,16 @@
 
         <?php foreach ($questions as $i => $q): ?>
         <div class="question-bloc">
-            <p class="numero-question">Question <?= $i + 1 ?> / <?= count($questions) ?></p>
+
+            <div class="question-header">
+                <p class="numero-question">Question <?= $i + 1 ?> / <?= count($questions) ?></p>
+                <a href="index.php?action=signalement&id_question=<?= $q->id ?>&id_questionnaire=<?= $questionnaire->id ?>"
+                   class="btn btn-signalement"
+                   title="Signaler un problème sur cette question">
+                    Signaler
+                </a>
+            </div>
+
             <p class="libelle-question"><?= htmlspecialchars($q->libelle) ?></p>
 
             <?php if ($q->typeReponse === 'VraiFaux'): ?>
@@ -39,6 +48,7 @@
                     </label>
                 <?php endforeach; ?>
             <?php endif; ?>
+
         </div>
         <?php endforeach; ?>
 

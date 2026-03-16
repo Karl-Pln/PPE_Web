@@ -273,3 +273,82 @@ h3 {
     text-decoration: none;
     font-weight: 600;
 }
+
+/* =====================================================================
+   À ajouter dans ton style.css
+   ===================================================================== */
+
+/* Header de chaque question (numéro + bouton signalement alignés) */
+.question-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+/* Bouton signalement discret, en orange */
+.btn-signalement {
+    font-size: 0.8rem;
+    padding: 4px 10px;
+    background-color: #f0ad4e;
+    color: white;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background-color 0.2s;
+}
+
+.btn-signalement:hover {
+    background-color: #d9831f;
+}
+
+/* Contexte du signalement (questionnaire + question concernée) */
+.signalement-contexte {
+    background-color: #f8f9fa;
+    border-left: 4px solid #f0ad4e;
+    padding: 10px 15px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+}
+
+.signalement-contexte p {
+    margin: 4px 0;
+}
+
+/* Textarea */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.form-group textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    resize: vertical;
+}
+
+/* Messages retour */
+.message-erreur {
+    color: #c0392b;
+    background: #fdecea;
+    border: 1px solid #e74c3c;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+
+.message-succes {
+    color: #1e8449;
+    background: #eafaf1;
+    border: 1px solid #2ecc71;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+}

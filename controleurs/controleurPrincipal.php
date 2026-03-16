@@ -123,6 +123,19 @@ function controleurPrincipal($action) {
             $controller->soumettre();
             break;
 
+        // SIGNALEMENT
+        case 'signalement':
+            require_once "controleurs/signalementControleur.php";
+            $controller = new SignalementControleur();
+            $controller->afficher();
+            break;
+ 
+        case 'envoyer_signalement':
+            require_once "controleurs/signalementControleur.php";
+            $controller = new SignalementControleur();
+            $controller->envoyer();
+            break;
+
         // PAR DÉFAUT
         default:
             require_once "controleurs/utilisateurControleur.php";
